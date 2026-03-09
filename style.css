@@ -14,13 +14,14 @@
    html {
      -webkit-text-size-adjust: 100%;
      scroll-behavior: smooth;
+     background: transparent;
    }
    
    body {
      font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
      font-weight: 500;
      color: #424a53;
-     background: #fff;
+     background: transparent;
      line-height: 1.5;
      -webkit-font-smoothing: antialiased;
      overflow-x: hidden;
@@ -31,7 +32,7 @@
     max-width: 430px;
     margin: 0 auto;
     min-height: 100dvh;
-    background: #fff;
+    background: transparent;
   }
    
    img {
@@ -803,12 +804,13 @@
    /* ========== タブレット (768px+) ========== */
    @media (min-width: 768px) {
      body {
-       background: #f0f4f8;
+       background: transparent;
      }
      .page {
        max-width: 1200px;
        margin-left: auto;
        margin-right: auto;
+       background: transparent;
        box-shadow: 0 0 48px rgba(0, 0, 0, 0.06);
      }
 
