@@ -1,0 +1,1208 @@
+/* ============================================
+   HILLS HIGH - レスポンシブ LP
+   Mobile-first / 768px+ Tablet / 1024px+ PC
+   ============================================ */
+
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   html {
+     -webkit-text-size-adjust: 100%;
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+     font-weight: 500;
+     color: #424a53;
+     background: #fff;
+     line-height: 1.5;
+     -webkit-font-smoothing: antialiased;
+     overflow-x: hidden;
+   }
+   
+  .page {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: #fff;
+  }
+   
+   img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+   }
+   
+   button {
+     font: inherit;
+     color: inherit;
+     background: none;
+     border: none;
+     cursor: pointer;
+   }
+   
+   a {
+     color: inherit;
+     text-decoration: none;
+   }
+   
+   /* ----- 共通: セクション・タブ・タイトル ----- */
+   .section {
+     padding: 27px 20px 40px;
+     position: relative;
+   }
+   
+   .section-tab {
+     font-family: 'Outfit', sans-serif;
+     font-size: 10px;
+     font-weight: 500;
+     color: #a1e1ff;
+     letter-spacing: 0.1px;
+     margin-bottom: 0;
+     line-height: 40px;
+   }
+   
+   .section-underline {
+     width: 70px;
+     height: 2px;
+     background: #00aeff;
+     margin-bottom: 20px;
+   }
+   
+  .section-title {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #00aeff;
+    letter-spacing: 0.3px;
+    line-height: 1.33;
+    margin-bottom: 8px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #424a53;
+    letter-spacing: 0.96px;
+    line-height: 1.44;
+    margin-bottom: 24px;
+  }
+   
+   /* ----- FV (First View / Hero) ----- */
+   .fv {
+     position: relative;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+   }
+   
+  .fv-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+    min-height: 80px;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    display: block;
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .hamburger {
+     width: 20px;
+     height: 6px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+   }
+   
+   .hamburger span {
+     display: block;
+     height: 2px;
+     background: #fff;
+     border-radius: 1px;
+   }
+   
+  .fv-hero {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 20px 72px;
+    min-height: 743px;
+    box-sizing: border-box;
+  }
+   
+   .fv-hero-bg {
+     position: absolute;
+     inset: -20% -15% -20% -15%;
+     z-index: 0;
+   }
+   
+   .fv-hero-bg img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transform: rotate(-2deg);
+   }
+   
+   .fv-gradient {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 200px;
+     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 35%, rgba(255,255,255,0.75) 75%, rgba(255,255,255,0.98) 100%);
+     z-index: 1;
+   }
+   
+  .fv-title {
+    position: relative;
+    z-index: 2;
+    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.32;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    text-align: left;
+  }
+   
+  .fv-title-accent {
+    color: #a1e1ff;
+  }
+
+  .fv-sub {
+    position: relative;
+    z-index: 2;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+   
+   .fv-cta {
+     position: relative;
+     z-index: 2;
+   }
+   
+   .btn-dl {
+     display: block;
+     width: 100%;
+     max-width: 390px;
+     margin: 0 auto 14px;
+     padding: 22px 20px;
+     background: linear-gradient(90deg, #004261 0%, #00aeff 100%);
+     border-radius: 10px;
+     font-family: 'Noto Sans JP', sans-serif;
+     font-size: 18px;
+     font-weight: 900;
+     color: #fff;
+     text-align: center;
+     box-shadow: 0 4px 20px rgba(0, 174, 255, 0.35);
+     transition: opacity 0.2s;
+   }
+   
+   .btn-dl:active {
+     opacity: 0.9;
+   }
+   
+   .fv-note {
+     font-size: 10px;
+     font-weight: 400;
+     color: rgba(36, 41, 47, 0.85);
+     text-align: center;
+     line-height: 1.4;
+   }
+   
+   /* ----- Main Section ----- */
+   .main-sec {
+     position: relative;
+     padding: 80px 20px 60px;
+     min-height: 520px;
+     overflow: hidden;
+   }
+   
+   .main-bg {
+     position: absolute;
+     inset: -15% -30% -10% -30%;
+     z-index: 0;
+   }
+   
+   .main-bg img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   .main-content {
+     position: relative;
+     z-index: 2;
+     max-width: 360px;
+   }
+   
+  .main-title {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: linear-gradient(180deg, #004261 0.36%, #00aeff 99.5%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     line-height: 1.33;
+     letter-spacing: 0.3px;
+     margin-bottom: 20px;
+   }
+   
+   .main-desc {
+     font-size: 16px;
+     color: #424a53;
+     letter-spacing: 0.96px;
+     line-height: 1.44;
+   }
+   
+  /* ----- Feature Section ----- */
+  .feature-sec {
+    background: #fff;
+  }
+
+  .feature-card {
+    background: #f6f8fa;
+    border: 1px solid #a1e1ff;
+    border-radius: 5px;
+    padding: 25px 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  .feature-card:last-of-type {
+    margin-bottom: 0;
+  }
+
+  /* タイトル: 中央揃え */
+  .feature-card-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #3dc2ff;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* 説明 + 画像を横並び */
+  .feature-card-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .feature-card-body {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px;
+    color: #424a53;
+    letter-spacing: -0.39px;
+    line-height: 1.77;
+    padding-right: 0;
+  }
+
+  .feature-card-body p + p {
+    margin-top: 8px;
+  }
+
+  .feature-card-img {
+    flex-shrink: 0;
+    width: 92px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  }
+
+  .feature-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-card-img--profile {
+    width: 81px;
+    height: 162px;
+  }
+   
+   /* ----- Peace of mind ----- */
+   .peace-sec {
+     background: #fff;
+   }
+   
+   .peace-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 16px;
+   }
+   
+   .peace-card {
+     background: #e5f6fe;
+     border-radius: 5px;
+     padding: 25px 16px 24px;
+     min-height: 363px;
+   }
+   
+  .peace-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .peace-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+   
+   .peace-title {
+     font-size: 18px;
+     font-weight: 500;
+     color: #00aeff;
+     text-align: center;
+     letter-spacing: 0.9px;
+     line-height: 1.29;
+     margin-bottom: 16px;
+   }
+   
+   .peace-card p {
+     font-size: 13px;
+     color: #424a53;
+     letter-spacing: -0.39px;
+     line-height: 1.77;
+   }
+   
+   .peace-card p + p {
+     margin-top: 6px;
+   }
+   
+   /* ----- Badge Section ----- */
+   .badge-sec {
+     background: #fff;
+   }
+   
+   .badge-title {
+     margin-bottom: 16px;
+   }
+   
+   .badge-sub {
+     margin-bottom: 32px;
+   }
+   
+   .badge-label {
+     font-size: 20px;
+     font-weight: 500;
+     color: #00aeff;
+     text-align: center;
+     letter-spacing: 1px;
+     margin-bottom: 8px;
+   }
+   
+   .badge-note {
+     font-size: 13px;
+     color: #8c959f;
+     text-align: center;
+     letter-spacing: 0.78px;
+     margin-bottom: 24px;
+   }
+   
+   .badge-label--bottom {
+     margin-top: 32px;
+     margin-bottom: 8px;
+   }
+   
+   .badge-note:last-of-type {
+     margin-bottom: 24px;
+   }
+   
+   .badge-carousel {
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     gap: 20px;
+     padding: 0 10px 40px;
+   }
+   
+   .badge-item {
+     width: 124px;
+     flex-shrink: 0;
+     text-align: center;
+     opacity: 0.7;
+     filter: blur(2px);
+   }
+   
+   .badge-item--center {
+     opacity: 1;
+     filter: none;
+     transform: scale(1.02);
+   }
+   
+   .badge-item img {
+     width: 100%;
+     height: 149px;
+     object-fit: cover;
+     border-radius: 8px;
+     box-shadow: 0 33px 23px -20px rgba(0,0,0,0.25);
+     margin-bottom: 8px;
+   }
+   
+   .badge-name {
+     font-size: 10px;
+     color: #424a53;
+     display: block;
+   }
+   
+   .badge-cards {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 16px;
+   }
+   
+   .badge-card {
+     border: 1px solid #a1e1ff;
+     border-radius: 5px;
+     padding: 25px 16px 24px;
+     position: relative;
+     min-height: 309px;
+   }
+   
+   .badge-card-line {
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 70px;
+     height: 2px;
+     background: #a1e1ff;
+     border-radius: 1px;
+   }
+   
+   .badge-card-title {
+     font-size: 18px;
+     font-weight: 500;
+     color: #3dc2ff;
+     text-align: center;
+     letter-spacing: 0.9px;
+     margin-bottom: 16px;
+   }
+   
+   .badge-card-illus {
+     width: 105px;
+     height: 139px;
+     margin: 0 auto 16px;
+     overflow: hidden;
+   }
+   
+   .badge-card-illus img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   .badge-card p {
+     font-size: 13px;
+     color: #424a53;
+     letter-spacing: -0.39px;
+     line-height: 1.77;
+   }
+   
+   /* ----- Story Section ----- */
+   .story-sec {
+     position: relative;
+     padding-top: 80px;
+     padding-bottom: 120px;
+     min-height: 758px;
+     overflow: hidden;
+   }
+   
+   .story-bg {
+     position: absolute;
+     inset: 0;
+     z-index: 0;
+   }
+   
+   .story-bg img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     object-position: center 20%;
+   }
+   
+   .story-overlay {
+     position: absolute;
+     inset: 0;
+     background: rgba(229, 246, 254, 0.84);
+     z-index: 1;
+   }
+   
+   .story-sec .section-tab,
+   .story-sec .section-underline,
+   .story-sec .section-title,
+   .story-sec .section-sub,
+   .story-sec .story-content {
+     position: relative;
+     z-index: 2;
+   }
+   
+   .story-tab {
+     color: #424a53;
+   }
+   
+   .story-title {
+     color: #24292f;
+     margin-bottom: 20px;
+   }
+   
+   .story-content {
+     font-size: 16px;
+     color: #24292f;
+     letter-spacing: 0.96px;
+     line-height: 1.44;
+   }
+   
+   .story-content p + p {
+     margin-top: 12px;
+   }
+   
+  .story-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 0;
+    min-height: 80px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .story-header .hamburger span {
+     background: #24292f;
+   }
+   
+   .story-footer-cta {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: 3;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 12px 21px;
+     background: linear-gradient(90deg, #e5f6fe 0%, #e8ecf1 100%);
+     min-height: 75px;
+   }
+   
+   .story-footer-info {
+     font-size: 10px;
+     color: #000;
+     line-height: 1.4;
+   }
+   
+   .story-footer-info strong {
+     font-weight: 700;
+   }
+   
+   .btn-dl-small {
+     display: inline-block;
+     padding: 8px 24px;
+     background: #00aeff;
+     border-radius: 50px;
+     font-size: 12px;
+     font-weight: 700;
+     color: #fff;
+     flex-shrink: 0;
+   }
+   
+   /* ----- Q&A Section ----- */
+   .qa-sec {
+     background: #fff;
+   }
+   
+   .qa-list {
+     list-style: none;
+   }
+   
+   .qa-item {
+     border-bottom: 1px solid #e8ecf1;
+   }
+   
+   .qa-question {
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+     padding: 22px 20px;
+     text-align: left;
+     font-size: 15px;
+     font-weight: 500;
+     color: #3dc2ff;
+     letter-spacing: 0.75px;
+     line-height: 1.47;
+     background: #fff;
+     transition: background 0.2s;
+   }
+   
+   .qa-question:hover {
+     background: #f6f8fa;
+   }
+   
+   .qa-icon {
+     flex-shrink: 0;
+     font-size: 20px;
+     color: #8c959f;
+     transition: transform 0.2s;
+   }
+   
+   .qa-item[data-open] .qa-icon {
+     transform: rotate(90deg);
+   }
+   
+   .qa-answer {
+     padding: 0 20px 20px;
+     background: #fff;
+   }
+   
+   .qa-answer p {
+     font-size: 13px;
+     color: #424a53;
+     line-height: 1.6;
+     padding: 12px 0;
+   }
+   
+   /* ----- Footer ----- */
+   .footer {
+     position: relative;
+     padding: 40px 20px 32px;
+     background: #f6f8fa;
+     border-top: 5px solid #a1e1ff;
+   }
+   
+   .footer-bg {
+     position: absolute;
+     inset: 0;
+     background: #f6f8fa;
+     z-index: 0;
+   }
+   
+   .footer-content {
+     position: relative;
+     z-index: 1;
+     text-align: center;
+   }
+   
+   .footer-copy {
+     font-size: 15px;
+     font-weight: 700;
+     background: linear-gradient(180deg, #004261 0.36%, #00aeff 99.5%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     letter-spacing: 0.9px;
+     line-height: 1.33;
+     margin-bottom: 24px;
+   }
+   
+  .footer-logo-symbol {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 24px;
+    display: block;
+    object-fit: contain;
+  }
+   
+   .btn-dl--footer {
+     margin-bottom: 12px;
+   }
+   
+   .footer-note {
+     font-size: 10px;
+     font-weight: 350;
+     color: #24292f;
+   }
+   
+   /* ----- 小さいモバイル ----- */
+   @media (max-width: 360px) {
+     .section,
+     .fv-hero,
+     .main-sec,
+     .footer {
+       padding-left: 16px;
+       padding-right: 16px;
+     }
+    .fv-title {
+      font-size: 44px;
+    }
+    .feature-card-title {
+      font-size: 18px;
+    }
+    .feature-card-img {
+      width: 80px;
+      height: 87px;
+    }
+    .feature-card-img--profile {
+      width: 70px;
+      height: 140px;
+    }
+  }
+
+   /* ========== タブレット (768px+) ========== */
+   @media (min-width: 768px) {
+     body {
+       background: #f0f4f8;
+     }
+     .page {
+       max-width: 1200px;
+       margin-left: auto;
+       margin-right: auto;
+       box-shadow: 0 0 48px rgba(0, 0, 0, 0.06);
+     }
+
+     .section {
+       padding: 48px 40px 64px;
+     }
+
+     .section-tab {
+       font-size: 12px;
+     }
+     .section-underline {
+       width: 80px;
+       margin-bottom: 24px;
+     }
+     .section-title {
+       font-size: 36px;
+       margin-bottom: 12px;
+     }
+     .section-sub {
+       font-size: 18px;
+       margin-bottom: 32px;
+     }
+
+    /* FV: ヒーロー */
+    .fv-header {
+      padding: 24px 40px 0;
+      min-height: 88px;
+    }
+    .logo-img {
+      height: 48px;
+    }
+    .fv-hero {
+       min-height: 85vh;
+       padding: 0 40px 88px;
+     }
+     .fv-hero-bg {
+       inset: -15% -10% -15% -10%;
+     }
+     .fv-title {
+       font-size: 56px;
+       margin-bottom: 20px;
+       text-align: center;
+     }
+     .fv-sub {
+       font-size: 20px;
+       margin-bottom: 32px;
+     }
+     .btn-dl {
+       max-width: 420px;
+       padding: 24px 24px;
+       font-size: 20px;
+     }
+     .fv-note {
+       font-size: 11px;
+     }
+
+     /* Main */
+     .main-sec {
+       padding: 100px 40px 80px;
+       min-height: 560px;
+     }
+     .main-content {
+       max-width: 480px;
+     }
+     .main-title {
+       font-size: 38px;
+       margin-bottom: 24px;
+     }
+     .main-desc {
+       font-size: 18px;
+     }
+
+     /* Feature: 2列 */
+     .feature-sec .section-sub {
+       margin-bottom: 40px;
+     }
+     .feature-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 24px;
+     }
+    .feature-sec .feature-card {
+      margin-bottom: 0;
+      min-height: 0;
+      padding: 28px 24px 28px;
+    }
+    .feature-card-title {
+      font-size: 22px;
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
+    .feature-card-row {
+      gap: 20px;
+    }
+    .feature-card-body {
+      font-size: 14px;
+      padding-right: 0;
+    }
+    .feature-card-img {
+      width: 100px;
+      height: 110px;
+    }
+    .feature-card-img--profile {
+      width: 88px;
+      height: 170px;
+    }
+
+     /* Peace: 3列 */
+     .peace-grid {
+       grid-template-columns: repeat(3, 1fr);
+       gap: 20px;
+     }
+     .peace-card {
+       min-height: 340px;
+       padding: 28px 20px;
+     }
+     .peace-title {
+       font-size: 19px;
+     }
+     .peace-card p {
+       font-size: 14px;
+     }
+
+     /* Badge */
+     .badge-carousel {
+       padding: 0 20px 48px;
+       gap: 28px;
+     }
+     .badge-item {
+       width: 140px;
+     }
+     .badge-item img {
+       height: 168px;
+     }
+     .badge-name {
+       font-size: 11px;
+     }
+     .badge-cards {
+       gap: 24px;
+     }
+     .badge-card {
+       min-height: 320px;
+       padding: 28px 20px;
+     }
+     .badge-card-title {
+       font-size: 19px;
+     }
+     .badge-card-illus {
+       width: 120px;
+       height: 150px;
+       margin-bottom: 20px;
+     }
+
+     /* Story */
+     .story-sec {
+       padding-top: 100px;
+       padding-bottom: 140px;
+       min-height: 640px;
+     }
+     .story-sec .section-title,
+     .story-sec .section-sub,
+     .story-sec .story-content {
+       max-width: 720px;
+       margin-left: auto;
+       margin-right: auto;
+     }
+     .story-content {
+       font-size: 17px;
+       line-height: 1.6;
+     }
+     .story-header {
+       padding: 24px 40px;
+     }
+     .story-footer-cta {
+       padding: 16px 40px;
+     }
+     .story-footer-info {
+       font-size: 11px;
+     }
+     .btn-dl-small {
+       padding: 10px 28px;
+       font-size: 13px;
+     }
+
+     /* Q&A */
+     .qa-question {
+       padding: 24px 28px;
+       font-size: 16px;
+     }
+     .qa-answer {
+       padding: 0 28px 24px;
+     }
+     .qa-answer p {
+       font-size: 14px;
+     }
+
+     /* Footer */
+     .footer {
+       padding: 48px 40px 40px;
+     }
+     .footer-content {
+       max-width: 600px;
+       margin: 0 auto;
+     }
+     .footer-copy {
+       font-size: 17px;
+       margin-bottom: 28px;
+     }
+     .footer-logo-symbol {
+       width: 56px;
+       height: 56px;
+       margin-bottom: 28px;
+     }
+     .btn-dl--footer {
+       max-width: 420px;
+       margin-left: auto;
+       margin-right: auto;
+       margin-bottom: 16px;
+     }
+     .footer-note {
+       font-size: 11px;
+     }
+   }
+
+   /* ========== PC (1024px+) ========== */
+   @media (min-width: 1024px) {
+     .section {
+       padding: 64px 48px 80px;
+       max-width: 1100px;
+       margin-left: auto;
+       margin-right: auto;
+     }
+
+     .section-title {
+       font-size: 40px;
+     }
+     .section-sub {
+       font-size: 19px;
+     }
+
+    .fv-header {
+      padding: 28px 48px 0;
+      min-height: 92px;
+    }
+    .logo-img {
+      height: 52px;
+    }
+    .fv-hero {
+       min-height: 90vh;
+       padding: 0 48px 100px;
+       max-width: 1200px;
+     }
+     .fv-title {
+       font-size: 64px;
+       margin-bottom: 24px;
+     }
+     .fv-sub {
+       font-size: 22px;
+       margin-bottom: 40px;
+     }
+     .btn-dl {
+       max-width: 440px;
+       padding: 26px 28px;
+       font-size: 22px;
+       transition: transform 0.2s, box-shadow 0.2s;
+     }
+     .btn-dl:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 8px 28px rgba(0, 174, 255, 0.4);
+     }
+
+     .main-sec {
+       padding: 120px 48px 100px;
+       max-width: 1200px;
+       min-height: 600px;
+     }
+     .main-content {
+       max-width: 520px;
+     }
+     .main-title {
+       font-size: 42px;
+       margin-bottom: 28px;
+     }
+     .main-desc {
+       font-size: 19px;
+     }
+
+     /* Feature: 4枚を2x2で */
+     .feature-sec {
+       max-width: 1100px;
+     }
+     .feature-grid {
+       grid-template-columns: repeat(2, 1fr);
+       gap: 28px;
+     }
+    .feature-sec .feature-card {
+      min-height: 0;
+      padding: 32px 28px 32px;
+    }
+    .feature-card-title {
+      font-size: 24px;
+      margin-bottom: 24px;
+      padding-right: 0;
+    }
+    .feature-card-row {
+      gap: 24px;
+    }
+    .feature-card-body {
+      font-size: 15px;
+      padding-right: 0;
+    }
+    .feature-card-img {
+      width: 108px;
+      height: 118px;
+    }
+    .feature-card-img--profile {
+      width: 96px;
+      height: 180px;
+    }
+
+     /* Peace: 3x2 グリッド */
+     .peace-sec {
+       max-width: 1100px;
+     }
+     .peace-grid {
+       grid-template-columns: repeat(3, 1fr);
+       gap: 24px;
+     }
+     .peace-card {
+       min-height: 360px;
+       padding: 32px 24px;
+     }
+     .peace-title {
+       font-size: 20px;
+     }
+     .peace-card p {
+       font-size: 15px;
+     }
+
+     .badge-sec {
+       max-width: 1100px;
+     }
+     .badge-carousel {
+       gap: 32px;
+       padding-bottom: 56px;
+     }
+     .badge-item {
+       width: 156px;
+     }
+     .badge-item img {
+       height: 186px;
+     }
+     .badge-cards {
+       gap: 28px;
+     }
+     .badge-card {
+       min-height: 340px;
+       padding: 32px 24px;
+     }
+     .badge-card-title {
+       font-size: 20px;
+     }
+
+     .story-sec {
+       padding-top: 120px;
+       padding-bottom: 160px;
+       min-height: 700px;
+     }
+     .story-content {
+       font-size: 18px;
+       max-width: 680px;
+     }
+     .story-header {
+       padding: 28px 48px;
+     }
+     .story-footer-cta {
+       padding: 20px 48px;
+     }
+
+     .qa-sec {
+       max-width: 800px;
+     }
+     .qa-question {
+       padding: 28px 32px;
+       font-size: 17px;
+     }
+     .qa-answer p {
+       font-size: 15px;
+     }
+
+     .footer {
+       padding: 56px 48px 48px;
+     }
+     .footer-copy {
+       font-size: 18px;
+     }
+     .footer-logo-symbol {
+       width: 64px;
+       height: 64px;
+     }
+     .btn-dl--footer {
+       max-width: 440px;
+     }
+     .btn-dl--footer:hover {
+       transform: translateY(-2px);
+       box-shadow: 0 8px 28px rgba(0, 174, 255, 0.4);
+     }
+   }

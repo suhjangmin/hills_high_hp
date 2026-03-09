@@ -1,0 +1,9 @@
+# Redirect SPA-style if needed (optional)
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
+
+[build]
+  publish = "."
+  command = "echo 'Static site'"
