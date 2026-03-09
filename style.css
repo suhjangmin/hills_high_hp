@@ -45,7 +45,7 @@
    
    img {
      max-width: 100%;
-     height: ;
+     height: auto;
      display: block;
    }
    
@@ -174,6 +174,17 @@
     padding: 160px 20px 40px;
     box-sizing: border-box;
   }
+
+  .fv-card-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fv-title {
+    order: -1;
+  }
    
    .fv-hero-bg {
      position: absolute;
@@ -233,6 +244,14 @@
      position: relative;
      z-index: 2;
    }
+
+   .fv-card-logo {
+     display: none;
+   }
+
+   .fv-cta-buttons {
+     display: none;
+   }
    
    .btn-dl {
      display: block;
@@ -253,6 +272,10 @@
    
    .btn-dl:active {
      opacity: 0.9;
+   }
+
+   .btn-dl--main {
+     display: block;
    }
    
    .fv-note {
@@ -366,6 +389,10 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
   }
 
   .feature-card-img img {
@@ -778,6 +805,17 @@
     display: block;
     object-fit: contain;
   }
+
+   .footer-buttons {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 12px;
+     margin-bottom: 12px;
+   }
+   .footer-buttons .btn-dl--footer {
+     margin: 0;
+   }
    
    .btn-dl--footer {
      margin-bottom: 12px;
@@ -1045,6 +1083,16 @@
        height: 56px;
        margin-bottom: 28px;
      }
+     .footer-buttons {
+       flex-direction: row;
+       justify-content: center;
+       gap: 24px;
+       margin-bottom: 16px;
+     }
+     .footer-buttons .btn-dl--footer {
+       max-width: 274px;
+       margin: 0;
+     }
      .btn-dl--footer {
        max-width: 420px;
        margin-left: auto;
@@ -1082,19 +1130,131 @@
     .logo-img {
       height: 52px;
     }
+    .fv-hero-bg {
+      inset: 0;
+    }
+    .fv-hero-bg img {
+      object-position: 55% 50%;
+      object-fit: cover;
+    }
+    .fv-gradient {
+      background: linear-gradient(90deg,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.15) 38%,
+        transparent 55%,
+        transparent 100%);
+      height: 100%;
+      bottom: auto;
+    }
     .fv-hero {
        height: 960px;
-       padding: 200px 48px 100px;
-       max-width: 1200px;
-       justify-content: flex-start;
+       padding: 120px 48px 100px;
+       max-width: none;
+       margin-left: 0;
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       gap: 144px;
+       text-align: left;
+       box-sizing: border-box;
+     }
+     .fv-card-inner {
+       position: relative;
+       z-index: 3;
+       width: 400px;
+       order: 0;
+       height: auto;
+       min-height: 620px;
+       display: flex;
+       flex-direction: column;
+       padding: 40px 40px 32px;
+       box-sizing: border-box;
+       overflow: hidden;
+     }
+     .fv-card-inner::before {
+       content: '';
+       position: absolute;
+       inset: 0;
+       background: #ffffff;
+       border-radius: 30px;
+       z-index: -1;
+       box-shadow: 0 20px 60px rgba(0,0,0,0.15);
      }
      .fv-title {
+       flex: 0 0 auto;
+       order: 1;
+       max-width: 480px;
+       margin: 0;
+       padding: 0;
        font-size: 64px;
-       margin-bottom: 24px;
+       line-height: 1.32;
+       color: #fff;
+       text-align: left;
+       position: relative;
+       z-index: 0;
+     }
+     .fv-title-accent {
+       color: #a1e1ff;
      }
      .fv-sub {
-       font-size: 22px;
-       margin-bottom: 40px;
+       flex: 0 0 auto;
+       margin: 0 0 16px;
+       padding: 0;
+       font-size: 18px;
+       text-align: center;
+       color: #004565;
+     }
+     .fv-card-logo {
+       display: flex;
+       flex: 0 0 auto;
+       align-items: center;
+       justify-content: center;
+       margin: 0 0 36px;
+       padding: 0;
+     }
+     .fv-card-logo-img {
+       width: 200px;
+       height: auto;
+       object-fit: contain;
+     }
+     .fv-cta {
+       flex: 0 0 auto;
+       margin: 0;
+       padding: 0;
+     }
+     .fv-note {
+       text-align: center;
+       color: rgba(0,0,0,0.7);
+       font-size: 11px;
+       line-height: 1.4;
+       margin: 20px 0 0;
+     }
+     .btn-dl--main {
+       display: none;
+     }
+     .fv-cta-buttons {
+       display: flex;
+       flex-direction: column;
+       gap: 16px;
+       margin-bottom: 0;
+       max-width: 274px;
+       width: 100%;
+       margin-left: auto;
+       margin-right: auto;
+     }
+     .fv-cta-buttons .btn-dl {
+       width: 274px;
+       max-width: 100%;
+       height: 68px;
+       margin: 0;
+       padding: 0 24px;
+       font-size: 19px;
+       font-weight: 900;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       line-height: 1;
      }
      .btn-dl {
        max-width: 440px;
@@ -1105,6 +1265,9 @@
      .btn-dl:hover {
        transform: translateY(-2px);
        box-shadow: 0 8px 28px rgba(0, 174, 255, 0.4);
+     }
+     .fv-cta-buttons .btn-dl:hover {
+       transform: none;
      }
 
      .main-sec {
@@ -1134,26 +1297,47 @@
     .feature-sec .feature-card {
       min-height: 0;
       padding: 32px 28px 32px;
+      display: flex;
+      flex-direction: column;
     }
     .feature-card-title {
       font-size: 24px;
       margin-bottom: 24px;
       padding-right: 0;
+      order: -1;
     }
     .feature-card-row {
       gap: 24px;
+      flex-direction: column;
+      order: 0;
+    }
+    .feature-card-img {
+      order: -1;
+      width: fit-content;
+      max-width: 100%;
+      height: 440px;
+      margin: 0 auto;
+      display: block;
+      background: transparent;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .feature-card-img img {
+      width: auto;
+      height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .feature-card-img--profile {
+      width: fit-content;
+      max-width: 100%;
+      height: 440px;
     }
     .feature-card-body {
       font-size: 15px;
       padding-right: 0;
-    }
-    .feature-card-img {
-      width: 108px;
-      height: 118px;
-    }
-    .feature-card-img--profile {
-      width: 96px;
-      height: 180px;
+      order: 1;
     }
 
      /* Peace: 3x2 グリッド */
