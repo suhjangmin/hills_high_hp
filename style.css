@@ -202,7 +202,7 @@
      height: 100%;
      object-fit: cover;
      object-position: center 46%;
-     transform: scale(1.35) rotate(-2deg) translate(-50px, -100px);
+     transform: scale(1.35) rotate(-2deg) translate(-20px, -100px);
    }
    
    .fv-gradient {
@@ -220,7 +220,7 @@
     z-index: 2;
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
     font-size: 48px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
     line-height: 1.55;
     letter-spacing: 0.02em;
@@ -1449,3 +1449,114 @@
        box-shadow: 0 8px 28px rgba(0, 174, 255, 0.4);
      }
    }
+
+   /* ----- Scroll reveal animation ----- */
+   .reveal-section .reveal-el {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .reveal-section.in-view .reveal-el {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   /* Main sec */
+   .main-sec.reveal-section .main-bg,
+   .main-sec.reveal-section .main-title,
+   .main-sec.reveal-section .main-desc {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .main-sec.reveal-section.in-view .main-bg { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+   .main-sec.reveal-section.in-view .main-title { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+   .main-sec.reveal-section.in-view .main-desc { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+
+   /* Feature, Peace, Badge, Story, QA: section header + content */
+   .reveal-section .section-tab,
+   .reveal-section .section-underline,
+   .reveal-section .section-title,
+   .reveal-section .section-sub {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .reveal-section.in-view .section-tab { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+   .reveal-section.in-view .section-underline { opacity: 1; transform: translateY(0); transition-delay: 0.07s; }
+   .reveal-section.in-view .section-title { opacity: 1; transform: translateY(0); transition-delay: 0.14s; }
+   .reveal-section.in-view .section-sub { opacity: 1; transform: translateY(0); transition-delay: 0.21s; }
+
+   .reveal-section .feature-card,
+   .reveal-section .peace-card {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .feature-sec.reveal-section.in-view .feature-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+   .feature-sec.reveal-section.in-view .feature-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+   .feature-sec.reveal-section.in-view .feature-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.42s; }
+   .feature-sec.reveal-section.in-view .feature-card:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.49s; }
+
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.52s; }
+   .peace-sec.reveal-section.in-view .peace-card:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.58s; }
+
+   /* Badge sec */
+   .badge-sec.reveal-section .badge-title,
+   .badge-sec.reveal-section .badge-sub,
+   .badge-sec.reveal-section .badge-label,
+   .badge-sec.reveal-section .badge-note,
+   .badge-sec.reveal-section .badge-carousel,
+   .badge-sec.reveal-section .badge-cards,
+   .badge-sec.reveal-section .badge-card {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .badge-sec.reveal-section.in-view .badge-title { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+   .badge-sec.reveal-section.in-view .badge-sub { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+   .badge-sec.reveal-section.in-view .badge-label { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+   .badge-sec.reveal-section.in-view .badge-note { opacity: 1; transform: translateY(0); transition-delay: 0.44s; }
+   .badge-sec.reveal-section.in-view .badge-carousel { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+   .badge-sec.reveal-section.in-view .badge-label--bottom { opacity: 1; transform: translateY(0); transition-delay: 0.56s; }
+   .badge-sec.reveal-section.in-view .badge-note:last-of-type { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+   .badge-sec.reveal-section.in-view .badge-cards { opacity: 1; transform: translateY(0); transition-delay: 0.66s; }
+   .badge-sec.reveal-section.in-view .badge-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.72s; }
+   .badge-sec.reveal-section.in-view .badge-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.78s; }
+
+   /* Story sec */
+   .story-sec.reveal-section .story-bg,
+   .story-sec.reveal-section .story-title,
+   .story-sec.reveal-section .section-tab.story-tab,
+   .story-sec.reveal-section .section-underline,
+   .story-sec.reveal-section .story-content,
+   .story-sec.reveal-section .story-footer-cta {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .story-sec.reveal-section.in-view .story-bg { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+   .story-sec.reveal-section.in-view .section-tab.story-tab { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+   .story-sec.reveal-section.in-view .section-underline { opacity: 1; transform: translateY(0); transition-delay: 0.16s; }
+   .story-sec.reveal-section.in-view .story-title { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+   .story-sec.reveal-section.in-view .story-content { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+   .story-sec.reveal-section.in-view .story-footer-cta { opacity: 1; transform: translateY(0); transition-delay: 0.38s; }
+
+   /* QA sec */
+   .qa-sec.reveal-section .qa-list,
+   .qa-sec.reveal-section .qa-item {
+     opacity: 0;
+     transform: translateY(24px);
+     transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+   }
+   .qa-sec.reveal-section.in-view .qa-list { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.34s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.52s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.58s; }
+   .qa-sec.reveal-section.in-view .qa-item:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.64s; }

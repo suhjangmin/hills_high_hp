@@ -53,7 +53,7 @@
     </header>
 
     <!-- Main: 基準を下げない出会い -->
-    <section class="main-sec">
+    <section class="main-sec reveal-section">
       <div class="main-bg">
         <img src="assets/png/main_couple_background.png" alt="" />
       </div>
@@ -72,7 +72,7 @@
     </section>
 
     <!-- Feature -->
-    <section class="section feature-sec">
+    <section class="section feature-sec reveal-section">
       <div class="section-tab">Feature</div>
       <div class="section-underline"></div>
       <h2 class="section-title">特徴</h2>
@@ -133,7 +133,7 @@
     </section>
 
     <!-- Peace of mind: 安心安全な理由 -->
-    <section class="section peace-sec">
+    <section class="section peace-sec reveal-section">
       <div class="section-tab">Peace of mind</div>
       <div class="section-underline"></div>
       <h2 class="section-title">安心安全な理由</h2>
@@ -188,7 +188,7 @@
     </section>
 
     <!-- Screening & Badge System -->
-    <section class="section badge-sec">
+    <section class="section badge-sec reveal-section">
       <div class="section-tab">Screening & Badge System</div>
       <div class="section-underline"></div>
       <h2 class="section-title badge-title">
@@ -241,7 +241,7 @@
     </section>
 
     <!-- Story -->
-    <section class="section story-sec">
+    <section class="section story-sec reveal-section">
       <div class="story-bg">
         <img src="assets/png/story_background.png" alt="" />
         <div class="story-overlay"></div>
@@ -273,7 +273,7 @@
     </section>
 
     <!-- Q&A -->
-    <section class="section qa-sec">
+    <section class="section qa-sec reveal-section">
       <div class="section-tab">Q&A</div>
       <div class="section-underline"></div>
       <h2 class="section-title">よくある質問</h2>
@@ -371,6 +371,22 @@
         }
       });
     });
+
+    // Scroll reveal: add .in-view when section enters viewport
+    (function() {
+      var revealSections = document.querySelectorAll('.reveal-section');
+      if (!revealSections.length) return;
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+      revealSections.forEach(function(section) {
+        observer.observe(section);
+      });
+    })();
   </script>
 </body>
 </html>
