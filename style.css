@@ -35,7 +35,7 @@
    
   .page {
     width: 100%;
-    max-width: 430px;
+    max-width: 516px;
     margin: 0 auto;
     min-height: 100dvh;
     background-color: transparent;
@@ -168,10 +168,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 800px;
-    padding: 160px 20px 40px;
+    padding: 80px 20px 80px;
     box-sizing: border-box;
   }
 
@@ -180,6 +181,10 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 468px;
+    flex-shrink: 0;
   }
 
   .fv-title {
@@ -196,8 +201,8 @@
      width: 100%;
      height: 100%;
      object-fit: cover;
-     object-position: center 35%;
-     transform: scale(1.12) rotate(-2deg);
+     object-position: center 46%;
+     transform: scale(1.35) rotate(-2deg) translate(-50px, -100px);
    }
    
    .fv-gradient {
@@ -205,8 +210,8 @@
      bottom: 0;
      left: 0;
      right: 0;
-     height: 240px;
-     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 30%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,0.98) 100%);
+     height: 320px;
+     background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.08) 25%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.5) 100%);
      z-index: 1;
    }
    
@@ -215,12 +220,16 @@
     z-index: 2;
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 700;
     color: #fff;
-    line-height: 1.32;
+    line-height: 1.55;
     letter-spacing: 0.02em;
-    margin-bottom: 24px;
-    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 468px;
+    flex-shrink: 0;
   }
    
   .fv-title-accent {
@@ -232,17 +241,21 @@
     z-index: 2;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     color: #fff;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.08em;
-    line-height: 1.4;
-    margin-bottom: 36px;
+    line-height: 1.5;
+    margin-bottom: 32px;
   }
    
    .fv-cta {
      position: relative;
      z-index: 2;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: stretch;
    }
 
    .fv-card-logo {
@@ -256,14 +269,14 @@
    .btn-dl {
      display: block;
      width: 100%;
-     max-width: 390px;
-     margin: 0 auto 16px;
-     padding: 22px 20px;
-     background: linear-gradient(90deg, #004261 0%, #00aeff 100%);
+     max-width: 468px;
+     margin: 0 auto 20px;
+     padding: 26px 24px;
+     background: linear-gradient(90deg, #00a8e8 0%, #0077b6 100%);
      border-radius: 10px;
      font-family: 'Noto Sans JP', sans-serif;
      font-size: 18px;
-     font-weight: 900;
+     font-weight: 700;
      color: #fff;
      text-align: center;
      box-shadow: 0 4px 20px rgba(0, 174, 255, 0.35);
@@ -281,22 +294,23 @@
    .fv-note {
      font-size: 10px;
      font-weight: 400;
-     color: rgba(255, 255, 255, 0.9);
-     text-align: center;
+     color: rgba(255, 255, 255, 0.85);
+     text-align: left;
      line-height: 1.4;
+     margin: 0;
    }
    
    /* ----- Main Section ----- */
    .main-sec {
      position: relative;
      padding: 80px 20px 60px;
-     min-height: 520px;
+     min-height: 780px;
      overflow: hidden;
    }
    
    .main-bg {
      position: absolute;
-     inset: -15% -30% -10% -30%;
+     inset: 0;
      z-index: 0;
    }
    
@@ -304,12 +318,13 @@
      width: 100%;
      height: 100%;
      object-fit: cover;
+     object-position: center 82%;
    }
    
    .main-content {
      position: relative;
      z-index: 2;
-     max-width: 360px;
+     max-width: 432px;
    }
    
   .main-title {
@@ -447,6 +462,11 @@
      letter-spacing: 0.9px;
      line-height: 1.29;
      margin-bottom: 16px;
+     min-height: 2.58em;
+     display: flex;
+     align-items: flex-start;
+     justify-content: center;
+     flex-wrap: wrap;
    }
    
    .peace-card p {
@@ -859,7 +879,7 @@
        background: transparent;
      }
      .page {
-       max-width: 1200px;
+       max-width: 1440px;
        margin-left: auto;
        margin-right: auto;
        background-color: transparent;
@@ -916,7 +936,7 @@
        margin-bottom: 32px;
      }
      .btn-dl {
-       max-width: 420px;
+       max-width: 504px;
        padding: 24px 24px;
        font-size: 20px;
      }
@@ -930,7 +950,7 @@
        min-height: 560px;
      }
      .main-content {
-       max-width: 480px;
+       max-width: 576px;
      }
      .main-title {
        font-size: 38px;
@@ -1032,7 +1052,7 @@
      .story-sec .section-title,
      .story-sec .section-sub,
      .story-sec .story-content {
-       max-width: 720px;
+       max-width: 864px;
        margin-left: auto;
        margin-right: auto;
      }
@@ -1071,7 +1091,7 @@
        padding: 48px 40px 40px;
      }
      .footer-content {
-       max-width: 600px;
+       max-width: 720px;
        margin: 0 auto;
      }
      .footer-copy {
@@ -1090,11 +1110,11 @@
        margin-bottom: 16px;
      }
      .footer-buttons .btn-dl--footer {
-       max-width: 274px;
+       max-width: 329px;
        margin: 0;
      }
      .btn-dl--footer {
-       max-width: 420px;
+       max-width: 504px;
        margin-left: auto;
        margin-right: auto;
        margin-bottom: 16px;
@@ -1108,7 +1128,7 @@
    @media (min-width: 1024px) {
      .section {
        padding: 64px 48px 80px;
-       max-width: 1100px;
+       max-width: 1320px;
        margin-left: auto;
        margin-right: auto;
      }
@@ -1134,8 +1154,8 @@
       inset: 0;
     }
     .fv-hero-bg img {
-      object-position: 55% 50%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center center;
     }
     .fv-gradient {
       background: linear-gradient(90deg,
@@ -1184,7 +1204,7 @@
      .fv-title {
        flex: 0 0 auto;
        order: 1;
-       max-width: 480px;
+       max-width: 576px;
        margin: 0;
        padding: 0;
        font-size: 64px;
@@ -1238,7 +1258,7 @@
        flex-direction: column;
        gap: 16px;
        margin-bottom: 0;
-       max-width: 274px;
+       max-width: 329px;
        width: 100%;
        margin-left: auto;
        margin-right: auto;
@@ -1255,9 +1275,10 @@
        align-items: center;
        justify-content: center;
        line-height: 1;
+       background: linear-gradient(90deg, #004261 0%, #00aeff 100%);
      }
      .btn-dl {
-       max-width: 440px;
+       max-width: 528px;
        padding: 26px 28px;
        font-size: 22px;
        transition: transform 0.2s, box-shadow 0.2s;
@@ -1272,11 +1293,11 @@
 
      .main-sec {
        padding: 120px 48px 100px;
-       max-width: 1200px;
+       max-width: 1440px;
        min-height: 600px;
      }
      .main-content {
-       max-width: 520px;
+       max-width: 624px;
      }
      .main-title {
        font-size: 42px;
@@ -1288,7 +1309,7 @@
 
      /* Feature: 4枚を2x2で */
      .feature-sec {
-       max-width: 1100px;
+       max-width: 1320px;
      }
      .feature-grid {
        grid-template-columns: repeat(2, 1fr);
@@ -1342,7 +1363,7 @@
 
      /* Peace: 3x2 グリッド */
      .peace-sec {
-       max-width: 1100px;
+       max-width: 1320px;
      }
      .peace-grid {
        grid-template-columns: repeat(3, 1fr);
@@ -1360,7 +1381,7 @@
      }
 
      .badge-sec {
-       max-width: 1100px;
+       max-width: 1320px;
      }
      .badge-carousel {
        gap: 32px;
@@ -1390,7 +1411,7 @@
      }
      .story-content {
        font-size: 18px;
-       max-width: 680px;
+       max-width: 816px;
      }
      .story-header {
        padding: 28px 48px;
@@ -1400,7 +1421,7 @@
      }
 
      .qa-sec {
-       max-width: 800px;
+       max-width: 960px;
      }
      .qa-question {
        padding: 28px 32px;
@@ -1421,7 +1442,7 @@
        height: 64px;
      }
      .btn-dl--footer {
-       max-width: 440px;
+       max-width: 528px;
      }
      .btn-dl--footer:hover {
        transform: translateY(-2px);
