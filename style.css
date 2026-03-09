@@ -41,6 +41,7 @@
     background-color: transparent;
     background: transparent;
     overflow-x: clip;
+    padding-bottom: 104px;
   }
    
    img {
@@ -60,6 +61,99 @@
    a {
      color: inherit;
      text-decoration: none;
+   }
+   
+   /* ----- Global fixed header (visible on scroll) ----- */
+   .global-header {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 100;
+     transform: translateY(-100%);
+     transition: transform 0.25s ease-out, background-color 0.25s ease-out;
+     padding-top: env(safe-area-inset-top, 0);
+   }
+   .global-header.is-visible {
+     transform: translateY(0);
+     background-color: rgba(255, 255, 255, 0.35);
+     -webkit-backdrop-filter: blur(12px);
+     backdrop-filter: blur(12px);
+   }
+   .global-header-inner {
+     max-width: 516px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 12px 20px;
+     min-height: 56px;
+     box-sizing: border-box;
+   }
+   
+   /* ----- Floating CTA bar (fixed at bottom) ----- */
+   .floating-cta {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     z-index: 90;
+     background: #e5f6fe;
+     border-top: 1px solid rgba(0, 0, 0, 0.06);
+     min-height: 84px;
+     box-sizing: border-box;
+   }
+   .floating-cta-inner {
+     max-width: 516px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 12px;
+     padding: 12px 20px;
+     padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+     box-sizing: border-box;
+   }
+   .floating-cta-left {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     min-width: 0;
+   }
+   .floating-cta-logo {
+     flex-shrink: 0;
+     width: 44px;
+     height: 44px;
+     border-radius: 12px;
+     background: #fff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+   }
+   .floating-cta-logo-img {
+     width: 36px;
+     height: 36px;
+     object-fit: contain;
+   }
+   .floating-cta-info {
+     flex: 1;
+     min-width: 0;
+     font-size: 10px;
+     color: #24292f;
+     line-height: 1.4;
+   }
+   .floating-cta-info strong {
+     font-weight: 700;
+     display: block;
+     margin-bottom: 2px;
+   }
+   .floating-cta-info span {
+     display: block;
+   }
+   .floating-cta .btn-dl-small {
+     flex-shrink: 0;
    }
    
    /* ----- 共通: セクション・タブ・タイトル ----- */
@@ -608,6 +702,14 @@
      object-fit: cover;
      border-radius: 50%;
    }
+
+  /* Badge criteria portrait tuning (inside circle) */
+  .badge-card-illus-img--male {
+    object-position: 50% 28%;
+  }
+  .badge-card-illus-img--female {
+    object-position: 50% 22%;
+  }
    
    .badge-card p {
      font-size: 13px;
@@ -646,13 +748,25 @@
    }
    
    .story-sec .section-tab,
-   .story-sec .section-underline,
    .story-sec .section-title,
    .story-sec .section-sub,
    .story-sec .story-content {
      position: relative;
      z-index: 2;
    }
+  .story-meta {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .story-meta-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(66, 74, 83, 0.35);
+  }
    
    .story-tab {
      color: #424a53;
@@ -766,12 +880,15 @@
      flex-shrink: 0;
      font-size: 20px;
      color: #8c959f;
-     transition: transform 0.2s;
+    display: inline-block;
+    line-height: 1;
+    transform: rotate(90deg);
+    transition: transform 0.2s;
    }
    
-   .qa-item[data-open] .qa-icon {
-     transform: rotate(90deg);
-   }
+  .qa-question[aria-expanded="true"] .qa-icon {
+    transform: rotate(-90deg);
+  }
    
    .qa-answer {
      padding: 0 20px 20px;
@@ -914,6 +1031,23 @@
     .fv-header {
       padding: 24px 40px 0;
       min-height: 88px;
+    }
+    .global-header-inner {
+      padding: 12px 40px;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .floating-cta {
+      min-height: 88px;
+    }
+    .floating-cta-inner {
+      max-width: 1440px;
+      padding: 16px 40px;
+      padding-bottom: calc(16px + env(safe-area-inset-bottom, 0));
+    }
+    .floating-cta-info {
+      font-size: 11px;
     }
     .logo-img {
       height: 48px;
@@ -1143,6 +1277,23 @@
     .fv-header {
       padding: 28px 48px 0;
       min-height: 92px;
+    }
+    .global-header-inner {
+      padding: 12px 48px;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .floating-cta {
+      min-height: 92px;
+    }
+    .floating-cta-inner {
+      max-width: 1440px;
+      padding: 20px 48px;
+      padding-bottom: calc(20px + env(safe-area-inset-bottom, 0));
+    }
+    .floating-cta-info {
+      font-size: 11px;
     }
     .fv {
       height: 960px;
@@ -1531,20 +1682,16 @@
    /* Story sec */
    .story-sec.reveal-section .story-bg,
    .story-sec.reveal-section .story-title,
-   .story-sec.reveal-section .section-tab.story-tab,
-   .story-sec.reveal-section .section-underline,
-   .story-sec.reveal-section .story-content,
-   .story-sec.reveal-section .story-footer-cta {
+   .story-sec.reveal-section .story-meta,
+   .story-sec.reveal-section .story-content {
      opacity: 0;
      transform: translateY(24px);
      transition: opacity 0.55s ease-out, transform 0.55s ease-out;
    }
    .story-sec.reveal-section.in-view .story-bg { opacity: 1; transform: translateY(0); transition-delay: 0s; }
-   .story-sec.reveal-section.in-view .section-tab.story-tab { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-   .story-sec.reveal-section.in-view .section-underline { opacity: 1; transform: translateY(0); transition-delay: 0.16s; }
+   .story-sec.reveal-section.in-view .story-meta { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
    .story-sec.reveal-section.in-view .story-title { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
    .story-sec.reveal-section.in-view .story-content { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-   .story-sec.reveal-section.in-view .story-footer-cta { opacity: 1; transform: translateY(0); transition-delay: 0.38s; }
 
    /* QA sec */
    .qa-sec.reveal-section .qa-list,

@@ -11,8 +11,36 @@
   <link rel="stylesheet" href="style.css" />
   <!-- HILLS HIGH LP -->
 </head>
-<body>
+<body id="top">
   <div class="page">
+    <!-- Global fixed header (visible on scroll) -->
+    <header class="global-header" id="global-header" aria-label="ヘッダー">
+      <div class="global-header-inner">
+        <a href="#top" class="logo" aria-label="HILLS HIGH トップへ">
+          <img src="assets/svg/9d58b5cb6056819fee0c28100326ba2fbb000b12.svg" alt="HILLS HIGH" class="logo-img" width="40" height="40" />
+        </a>
+        <button type="button" class="hamburger" aria-label="メニュー">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Floating CTA bar (fixed at bottom) -->
+    <div class="floating-cta" aria-label="ダウンロード">
+      <div class="floating-cta-inner">
+        <div class="floating-cta-left">
+          <div class="floating-cta-logo" aria-hidden="true">
+            <img src="assets/svg/9d58b5cb6056819fee0c28100326ba2fbb000b12.svg" alt="" class="floating-cta-logo-img" width="44" height="44" />
+          </div>
+          <div class="floating-cta-info">
+            <strong>HILLS HIGH（ヒルズハイ）</strong>
+            <span>厳選されたエリートのための<br />完全審査制コミュニティ。</span>
+          </div>
+        </div>
+        <a href="#" class="btn-dl-small">ダウンロード</a>
+      </div>
+    </div>
+
     <!-- FV: First View / Hero -->
     <header class="fv">
       <div class="fv-header">
@@ -225,7 +253,7 @@
           <div class="badge-card-line"></div>
           <h3 class="badge-card-title">男性の登録基準</h3>
           <div class="badge-card-illus">
-            <img src="assets/png/badge_male_criteria_illust.png" alt="" />
+            <img src="assets/png/badge_male_criteria_illust.png" alt="" class="badge-card-illus-img badge-card-illus-img--male" />
           </div>
           <p>上記メイン認証バッジのうち、1つ以上の取得が必須です。</p>
         </article>
@@ -233,7 +261,7 @@
           <div class="badge-card-line"></div>
           <h3 class="badge-card-title">女性の登録基準</h3>
           <div class="badge-card-illus">
-            <img src="assets/png/badge_male_criteria_illust_02.png" alt="" />
+            <img src="assets/png/badge_male_criteria_illust_02.png" alt="" class="badge-card-illus-img badge-card-illus-img--female" />
           </div>
           <p>メイン認証バッジのうち1つを取得、またはプロフィール審査を通過することで登録が可能です。</p>
         </article>
@@ -246,29 +274,15 @@
         <img src="assets/png/story_background.png" alt="" />
         <div class="story-overlay"></div>
       </div>
-      <div class="section-tab story-tab">Our Story</div>
-      <div class="section-underline"></div>
+      <div class="story-meta">
+        <div class="section-tab story-tab">Our Story</div>
+        <div class="story-meta-line" aria-hidden="true"></div>
+      </div>
       <h2 class="section-title story-title">信頼できる出会いのため</h2>
       <div class="story-content">
         <p>私たち株式会社トリプルコンマは、単なる「マッチング」ではなく、信頼できる人と、安心して出会えることを大切にしています。</p>
         <p>プロフィールに書かれたことを疑う必要がなく、相手を人としてまっすぐに好きになれる――そんな出会いを増やしたいという想いから、HILLS HIGHは生まれました。</p>
         <p>これからも、一つひとつの出会いがあなたの人生をより豊かにするような、上質な出会いの場を目指して、サービスづくりを続けていきます。</p>
-      </div>
-      <div class="story-header">
-        <div class="logo">
-          <img src="assets/svg/9d58b5cb6056819fee0c28100326ba2fbb000b12.svg" alt="HILLS HIGH" class="logo-img" width="40" height="40" />
-        </div>
-        <button type="button" class="hamburger" aria-label="メニュー">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-      <div class="story-footer-cta">
-        <div class="story-footer-info">
-          <strong>HILLS HIGH（ヒルズハイ）</strong><br />
-          厳選されたエリートのための<br />
-          完全審査制コミュニティ。
-        </div>
-        <a href="#" class="btn-dl-small">ダウンロード</a>
       </div>
     </section>
 
@@ -382,10 +396,26 @@
             entry.target.classList.add('in-view');
           }
         });
-      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.05 });
+      }, { rootMargin: '0px 0px -20px 0px', threshold: 0 });
       revealSections.forEach(function(section) {
         observer.observe(section);
       });
+    })();
+
+    // Fixed header: show when scrolled down
+    (function() {
+      var header = document.getElementById('global-header');
+      if (!header) return;
+      var threshold = 120;
+      function update() {
+        if (window.scrollY > threshold) {
+          header.classList.add('is-visible');
+        } else {
+          header.classList.remove('is-visible');
+        }
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
     })();
   </script>
 </body>
